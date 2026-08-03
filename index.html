@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТШ — Той шақырту шаблондары</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:   #ebebeb;
+    --ink:  #2e2e2e;
+    --mid:  #888;
+    --line: rgba(46,46,46,0.12);
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 48px 48px 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .logo-mark {
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    user-select: none;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding-left: 2px;
+    margin-top: 6px;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    padding: 64px 48px 48px;
+    max-width: 560px;
+  }
+
+  .intro h1 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .intro p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* ── GRID ── */
+  .grid-label {
+    padding: 0 48px 20px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card {
+    background: var(--bg);
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover { background: #e2e2e2; }
+  .card:hover .card-arrow { opacity: 1; transform: translate(0, 0); }
+
+  .card-num {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--mid);
+  }
+
+  .card-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    color: var(--mid);
+    align-self: flex-start;
+  }
+
+  .card-arrow {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    font-size: 18px;
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity 0.2s, transform 0.2s;
+    color: var(--ink);
+  }
+
+  .card.empty {
+    pointer-events: none;
+    opacity: 0.35;
+  }
+  .card.empty .card-tag { border-color: var(--line); color: var(--mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+  }
+
+  footer span {
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    header, .intro, .grid-label, footer { padding-left: 24px; padding-right: 24px; }
+    .card { padding: 28px 24px; }
+    .card-arrow { top: 28px; right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">ТШ</div>
+    <div class="logo-sub">Той шақырту</div>
+  </div>
+  <div class="header-meta">
+    Alikhan<br>
+    2026
+  </div>
+</header>
+
+<div class="intro">
+  <h1>Үйлену тойына арналған цифрлық шақырту шаблондары</h1>
+  <p>Музыка, анимация және Google Sheets интеграциясы бар 12 дайын шаблон. Тек атты, күнді және суреттерді ауыстырыңыз.</p>
+</div>
+
+<div class="grid-label">Шаблондар — 01 / 12</div>
+
+<div class="grid">
+
+  <a class="card" href="Sample1/index.html">
+    <span class="card-num">01</span>
+    <div class="card-swatch" style="background: linear-gradient(135deg,#c8956c,#e8c97e)"></div>
+    <div class="card-title">Розово-золотой</div>
+    <div class="card-desc">Жылы тондар, түсетін гүл жапырақшалары. Романтикалық стиль.</div>
+    <span class="card-tag">Лепестки</span>
+    <span class="card-arrow">↗</span>
+  </a>
+
+  <a class="card" href="Sample2/index.html">
+    <span class="card-num">02</span>
+    <div class="card-swatch" style="background: linear-gradient(135deg,#2d6a4f,#74c69d)"></div>
+    <div class="card-title">Изумрудно-белый</div>
+    <div class="card-desc">Жасыл тондар, безье жапырақтары. Элегантты минимализм.</div>
+    <span class="card-tag">Листья</span>
+    <span class="card-arrow">↗</span>
+  </a>
+
+  <a class="card" href="Sample3/index.html">
+    <span class="card-num">03</span>
+    <div class="card-swatch" style="background: linear-gradient(135deg,#0d1b2a,#4a7fa5)"></div>
+    <div class="card-title">Тёмно-синий / серебро</div>
+    <div class="card-desc">Қараңғы фон, жұлдыздар мен жарқылдар. Люкс стиль.</div>
+    <span class="card-tag">Звёзды</span>
+    <span class="card-arrow">↗</span>
+  </a>
+
+  <a class="card empty" href="Sample4/index.html">
+    <span class="card-num">04</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample5/index.html">
+    <span class="card-num">05</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample6/index.html">
+    <span class="card-num">06</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample7/index.html">
+    <span class="card-num">07</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample8/index.html">
+    <span class="card-num">08</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample9/index.html">
+    <span class="card-num">09</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample10/index.html">
+    <span class="card-num">10</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample11/index.html">
+    <span class="card-num">11</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+  <a class="card empty" href="Sample12/index.html">
+    <span class="card-num">12</span>
+    <div class="card-swatch" style="background: #ccc"></div>
+    <div class="card-title">Жақында</div>
+    <div class="card-desc">Бұл шаблон әзірленуде.</div>
+    <span class="card-tag">Скоро</span>
+  </a>
+
+</div>
+
+<footer>
+  <span>ТШ — Той шақырту © 2026</span>
+  <span>Alikhan</span>
+</footer>
+
+</body>
+</html>
