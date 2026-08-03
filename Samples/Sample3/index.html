@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="💍 АТЫ & АТТЫҢ үйлену тойына шақыру!">
-<meta property="og:description" content="ДД.АА.ЖЖЖЖ">
+<meta property="og:title" content="✦ Тімур мен Зарина тойына шақыру!">
+<meta property="og:description" content="7 Қаңтар 2026">
 <meta property="og:image" content="photo1.jpg">
-<title>💍 АТЫ & АТТЫҢ үйлену тойына шақыру!</title>
+<title>✦ Тімур мен Зарина тойына шақыру!</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="modal-open">
@@ -15,7 +15,7 @@
 <div id="modal" class="modal">
   <div class="modal-box">
     <img src="cover.jpg" alt="cover" class="modal-img">
-    <button id="openBtn">✦ Шақыртуды ашу</button>
+    <button id="openBtn">✦ Шақырту хатты ашу</button>
   </div>
 </div>
 
@@ -27,9 +27,9 @@
   </div>
 
   <div class="fade-in center names-block">
-    <p class="pre-title">ҮЙЛЕНУ ТОЙЫНА ШАҚЫРАМЫЗ</p>
-    <h1 class="names">АТЫ <span>&</span> АТЫ</h1>
-    <p class="date-text">ДД АЙ ЖЖЖЖ</p>
+    <p class="pre-title">ТОЙҒА ШАҚЫРАМЫЗ</p>
+    <h1 class="names">Тімур <span>&</span> Зарина</h1>
+    <p class="date-text">7 Қаңтар 2026</p>
   </div>
 
   <div class="fade-in center">
@@ -45,7 +45,7 @@
   </div>
 
   <div class="fade-in">
-    <a href="https://maps.google.com/?q=VENUE_ADDRESS">
+    <a href="https://maps.google.com/?q=Астана,+Нұрлы+жол+1">
       <img src="photo2.jpg" class="full-img" alt="">
     </a>
   </div>
@@ -59,7 +59,7 @@
       <div class="radio-group">
         <p>Келесіз бе?</p>
         <label><input type="radio" name="attend" value="Иә барамын" required> Иә барамын</label>
-        <label><input type="radio" name="attend" value="Жұбайыммен барамын"> Жұбайыммен барамын</label>
+        <label><input type="radio" name="attend" value="Серіктесіммен барамын"> Серіктесіммен барамын</label>
         <label><input type="radio" name="attend" value="Бара алмаймын"> Бара алмаймын</label>
       </div>
       <div class="counter-group">
@@ -89,7 +89,7 @@
 
 <script>
 const CONFIG = {
-  weddingDate: "2026-09-24T18:00:00",
+  eventDate: "2026-01-07T19:00:00",
   googleScriptUrl: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
   autoScrollSpeed: 80,
   particleColor: ["rgba(255,255,255,0.8)","rgba(192,192,192,0.6)","rgba(200,180,255,0.5)"],
@@ -108,7 +108,7 @@ document.getElementById("openBtn").addEventListener("click", () => {
 
 function startCountdown() {
   function tick() {
-    const diff = new Date(CONFIG.weddingDate) - new Date();
+    const diff = new Date(CONFIG.eventDate) - new Date();
     if (diff <= 0) { ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "00"); return; }
     document.getElementById("days").textContent    = String(Math.floor(diff/86400000)).padStart(2,"0");
     document.getElementById("hours").textContent   = String(Math.floor(diff%86400000/3600000)).padStart(2,"0");

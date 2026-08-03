@@ -26,7 +26,6 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
   header {
     display: flex;
     align-items: flex-end;
@@ -35,30 +34,9 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .logo {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .logo-mark {
-    font-size: clamp(52px, 10vw, 96px);
-    font-weight: 400;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-    user-select: none;
-  }
-
-  .logo-sub {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mid);
-    padding-left: 2px;
-    margin-top: 6px;
+  .logo img {
+    height: 72px;
+    display: block;
   }
 
   .header-meta {
@@ -69,7 +47,6 @@
     line-height: 1.8;
   }
 
-  /* ── INTRO ── */
   .intro {
     padding: 64px 48px 48px;
     max-width: 560px;
@@ -89,7 +66,6 @@
     line-height: 1.7;
   }
 
-  /* ── GRID ── */
   .grid-label {
     padding: 0 48px 20px;
     font-size: 11px;
@@ -176,9 +152,7 @@
     pointer-events: none;
     opacity: 0.35;
   }
-  .card.empty .card-tag { border-color: var(--line); color: var(--mid); }
 
-  /* ── FOOTER ── */
   footer {
     padding: 40px 48px;
     display: flex;
@@ -193,11 +167,11 @@
     letter-spacing: 0.08em;
   }
 
-  /* ── MOBILE ── */
   @media (max-width: 600px) {
     header, .intro, .grid-label, footer { padding-left: 24px; padding-right: 24px; }
     .card { padding: 28px 24px; }
     .card-arrow { top: 28px; right: 24px; }
+    .logo img { height: 52px; }
   }
 </style>
 </head>
@@ -205,8 +179,7 @@
 
 <header>
   <div class="logo">
-    <div class="logo-mark">ТШ</div>
-    <div class="logo-sub">Той шақырту</div>
+    <img src="tou.png" alt="ТШ — Той шақырту">
   </div>
   <div class="header-meta">
     Alikhan<br>
@@ -215,8 +188,8 @@
 </header>
 
 <div class="intro">
-  <h1>Үйлену тойына арналған цифрлық шақырту шаблондары</h1>
-  <p>Музыка, анимация және Google Sheets интеграциясы бар 12 дайын шаблон. Тек атты, күнді және суреттерді ауыстырыңыз.</p>
+  <h1>Кез келген той үшін цифрлық шақырту шаблондары</h1>
+  <p>Музыка, анимация және Google Sheets интеграциясы бар дайын шаблондар. Атты, күнді, суреттер мен музыканы ауыстырыңыз — шақырту дайын.</p>
 </div>
 
 <div class="grid-label">Шаблондар — 01 / 12</div>
@@ -226,27 +199,27 @@
   <a class="card" href="Samples/Sample1/index.html">
     <span class="card-num">01</span>
     <div class="card-swatch" style="background: linear-gradient(135deg,#c8956c,#e8c97e)"></div>
-    <div class="card-title">Розово-золотой</div>
+    <div class="card-title">Қызғылт-алтын</div>
     <div class="card-desc">Жылы тондар, түсетін гүл жапырақшалары. Романтикалық стиль.</div>
-    <span class="card-tag">Лепестки</span>
+    <span class="card-tag">Жапырақшалар</span>
     <span class="card-arrow">↗</span>
   </a>
 
   <a class="card" href="Samples/Sample2/index.html">
     <span class="card-num">02</span>
     <div class="card-swatch" style="background: linear-gradient(135deg,#2d6a4f,#74c69d)"></div>
-    <div class="card-title">Изумрудно-белый</div>
+    <div class="card-title">Зумрут-ақ</div>
     <div class="card-desc">Жасыл тондар, безье жапырақтары. Элегантты минимализм.</div>
-    <span class="card-tag">Листья</span>
+    <span class="card-tag">Жапырақтар</span>
     <span class="card-arrow">↗</span>
   </a>
 
   <a class="card" href="Samples/Sample3/index.html">
     <span class="card-num">03</span>
     <div class="card-swatch" style="background: linear-gradient(135deg,#0d1b2a,#4a7fa5)"></div>
-    <div class="card-title">Тёмно-синий / серебро</div>
+    <div class="card-title">Қара-күміс</div>
     <div class="card-desc">Қараңғы фон, жұлдыздар мен жарқылдар. Люкс стиль.</div>
-    <span class="card-tag">Звёзды</span>
+    <span class="card-tag">Жұлдыздар</span>
     <span class="card-arrow">↗</span>
   </a>
 
@@ -255,7 +228,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample5/index.html">
@@ -263,7 +236,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample6/index.html">
@@ -271,7 +244,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample7/index.html">
@@ -279,7 +252,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample8/index.html">
@@ -287,7 +260,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample9/index.html">
@@ -295,7 +268,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample10/index.html">
@@ -303,7 +276,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample11/index.html">
@@ -311,7 +284,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
   <a class="card empty" href="Samples/Sample12/index.html">
@@ -319,7 +292,7 @@
     <div class="card-swatch" style="background: #ccc"></div>
     <div class="card-title">Жақында</div>
     <div class="card-desc">Бұл шаблон әзірленуде.</div>
-    <span class="card-tag">Скоро</span>
+    <span class="card-tag">Жақында</span>
   </a>
 
 </div>
