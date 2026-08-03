@@ -1,0 +1,53 @@
+/* ===== SAMPLE 2: EMERALD & WHITE ===== */
+:root {
+  --bg:       #f5f9f6;
+  --primary:  #2d6a4f;
+  --accent:   #74c69d;
+  --text:     #1b3a2d;
+  --light:    #e8f5ee;
+  --btn-bg:   linear-gradient(135deg, #2d6a4f, #52b788);
+  --btn-text: #fff;
+  --font-title: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  --font-body:  system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
+body.modal-open { overflow: hidden; }
+
+#particles { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+.modal-box { background: var(--bg); width: min(90%, 420px); border-radius: 4px; overflow: hidden; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.4); border: 1px solid var(--accent); }
+.modal-img { width: 100%; display: block; }
+.modal-box button { margin: 20px auto; padding: 12px 32px; font-size: 16px; background: var(--btn-bg); color: var(--btn-text); border: none; border-radius: 4px; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase; font-size: 13px; }
+
+.full-img { width: 100%; display: block; }
+
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.center { text-align: center; }
+
+.names-block { padding: 50px 20px 30px; }
+.divider { width: 60px; height: 1px; background: var(--accent); margin: 16px auto; }
+.names { font-family: var(--font-title); font-size: clamp(26px, 7vw, 48px); font-weight: 400; color: var(--primary); letter-spacing: 0.06em; }
+.names span { color: var(--accent); }
+.date-text { margin-top: 12px; font-size: clamp(13px, 3.5vw, 18px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); opacity: 0.6; }
+
+.countdown { display: flex; align-items: flex-start; justify-content: center; gap: 8px; padding: 30px 20px; }
+.cd-item { display: flex; flex-direction: column; align-items: center; min-width: 52px; }
+.cd-item span { font-size: clamp(30px, 8vw, 48px); font-weight: 200; color: var(--primary); line-height: 1; }
+.cd-item small { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); opacity: 0.5; margin-top: 6px; }
+.cd-sep { font-size: clamp(24px, 6vw, 36px); color: var(--accent); padding-top: 4px; line-height: 1; }
+
+.form-section { padding: 50px 20px 60px; background: var(--light); }
+.form-section form { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 360px; margin: 0 auto; }
+.radio-group, .counter-group { width: 100%; text-align: left; }
+.radio-group p, .counter-group p { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; color: var(--primary); }
+.radio-group label { display: block; font-size: 15px; margin-bottom: 10px; cursor: pointer; }
+.radio-group input[type="radio"] { margin-right: 8px; accent-color: var(--primary); }
+.counter { display: flex; align-items: center; gap: 16px; }
+.counter button { width: 36px; height: 36px; border-radius: 4px; border: 1px solid var(--primary); background: transparent; color: var(--primary); font-size: 20px; cursor: pointer; }
+.counter span { font-size: 22px; min-width: 24px; text-align: center; }
+.form-section input[type="text"] { width: 100%; padding: 12px 16px; border: 1px solid #cde; border-radius: 4px; font-size: 15px; background: #fff; color: var(--text); text-align: center; }
+.form-section button[type="submit"] { width: 100%; padding: 14px; background: var(--btn-bg); color: var(--btn-text); border: none; border-radius: 4px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }

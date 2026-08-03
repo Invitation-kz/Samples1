@@ -1,0 +1,54 @@
+/* ===== SAMPLE 3: DARK NAVY & SILVER ===== */
+:root {
+  --bg:       #0d1b2a;
+  --primary:  #c9d6df;
+  --accent:   #a8b8c8;
+  --text:     #e8edf2;
+  --light:    #132233;
+  --btn-bg:   linear-gradient(135deg, #1e3a5f, #4a7fa5);
+  --btn-text: #fff;
+  --font-title: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;
+  --font-body:  system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
+body.modal-open { overflow: hidden; }
+
+#particles { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+.modal-box { background: var(--light); width: min(90%, 420px); border-radius: 2px; overflow: hidden; text-align: center; box-shadow: 0 0 60px rgba(100,150,200,0.2); border: 1px solid rgba(200,210,220,0.2); }
+.modal-img { width: 100%; display: block; }
+.modal-box button { margin: 20px auto; padding: 12px 36px; font-size: 13px; background: var(--btn-bg); color: var(--btn-text); border: none; cursor: pointer; letter-spacing: 0.2em; text-transform: uppercase; }
+
+.full-img { width: 100%; display: block; filter: brightness(0.95); }
+
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 1.1s ease, transform 1.1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.center { text-align: center; }
+
+.names-block { padding: 60px 20px 40px; }
+.pre-title { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.names { font-family: var(--font-title); font-size: clamp(28px, 8vw, 56px); font-weight: 400; color: var(--primary); letter-spacing: 0.08em; }
+.names span { color: var(--accent); font-style: italic; }
+.date-text { margin-top: 16px; font-size: clamp(12px, 3vw, 16px); letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); opacity: 0.7; }
+
+.countdown { display: flex; align-items: flex-start; justify-content: center; gap: 4px; padding: 30px 20px; }
+.cd-item { display: flex; flex-direction: column; align-items: center; min-width: 56px; }
+.cd-item span { font-size: clamp(32px, 9vw, 52px); font-weight: 100; color: var(--primary); line-height: 1; }
+.cd-item small { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); opacity: 0.6; margin-top: 6px; }
+.cd-sep { font-size: clamp(28px, 8vw, 44px); color: var(--accent); padding-top: 2px; line-height: 1; opacity: 0.4; }
+
+.form-section { padding: 60px 20px 70px; background: var(--light); }
+.form-section form { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 360px; margin: 0 auto; }
+.radio-group, .counter-group { width: 100%; text-align: left; }
+.radio-group p, .counter-group p { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent); }
+.radio-group label { display: block; font-size: 15px; margin-bottom: 10px; cursor: pointer; color: var(--text); }
+.radio-group input[type="radio"] { margin-right: 8px; accent-color: var(--accent); }
+.counter { display: flex; align-items: center; gap: 16px; }
+.counter button { width: 36px; height: 36px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-size: 20px; cursor: pointer; }
+.counter span { font-size: 22px; min-width: 24px; text-align: center; color: var(--text); }
+.form-section input[type="text"] { width: 100%; padding: 12px 16px; border: 1px solid rgba(200,210,220,0.2); background: rgba(255,255,255,0.05); color: var(--text); font-size: 15px; text-align: center; }
+.form-section input[type="text"]::placeholder { color: rgba(200,210,220,0.4); }
+.form-section button[type="submit"] { width: 100%; padding: 14px; background: var(--btn-bg); color: var(--btn-text); border: none; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }

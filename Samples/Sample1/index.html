@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="💍 АТЫ & АТТЫҢ үйлену тойына шақыру!">
+<meta property="og:description" content="ДД.АА.ЖЖЖЖ">
+<meta property="og:image" content="photo1.jpg">
+<title>💍 АТЫ & АТТЫҢ үйлену тойына шақыру!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="modal-open">
+
+<!-- ========== MODAL ========== -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <img src="cover.jpg" alt="cover" class="modal-img">
+    <button id="openBtn">💌 Шақыртуды ашу</button>
+  </div>
+</div>
+
+<!-- ========== CONTENT ========== -->
+<div id="page" style="display:none">
+
+  <!-- Hero photo -->
+  <div class="fade-in">
+    <img src="photo1.jpg" class="full-img" alt="">
+  </div>
+
+  <!-- Names & date -->
+  <div class="fade-in center names-block">
+    <h1 class="names">АТЫ <span>&</span> АТЫ</h1>
+    <p class="date-text">ДД Ай, ЖЖЖЖ</p>
+  </div>
+
+  <!-- Countdown -->
+  <div class="fade-in center">
+    <div class="countdown">
+      <div class="cd-item"><span id="days">00</span><small>күн</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span id="hours">00</span><small>сағат</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span id="minutes">00</span><small>минут</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span id="seconds">00</span><small>секунд</small></div>
+    </div>
+  </div>
+
+  <!-- Photo 2 (venue/map link) -->
+  <div class="fade-in">
+    <a href="https://maps.google.com/?q=VENUE_ADDRESS">
+      <img src="photo2.jpg" class="full-img" alt="">
+    </a>
+  </div>
+
+  <!-- Photo 3 -->
+  <div class="fade-in">
+    <img src="photo3.jpg" class="full-img" alt="">
+  </div>
+
+  <!-- RSVP Form -->
+  <div class="fade-in center form-section">
+    <form id="rsvpForm">
+      <div class="radio-group">
+        <p>Келесіз бе?</p>
+        <label><input type="radio" name="attend" value="Иә барамын" required> Иә барамын</label>
+        <label><input type="radio" name="attend" value="Жұбайыммен барамын"> Жұбайыммен барамын</label>
+        <label><input type="radio" name="attend" value="Бара алмаймын"> Бара алмаймын</label>
+      </div>
+      <div class="counter-group">
+        <p>Неше адам?</p>
+        <div class="counter">
+          <button type="button" id="dec">−</button>
+          <span id="cnt">1</span>
+          <button type="button" id="inc">+</button>
+        </div>
+        <input type="hidden" id="countVal" name="count" value="1">
+      </div>
+      <input type="text" name="name" placeholder="Есіміңізді жазыңыз" required>
+      <button type="submit">Жіберу</button>
+    </form>
+  </div>
+
+  <!-- Bottom photo -->
+  <div class="fade-in">
+    <img src="photo4.jpg" class="full-img" alt="">
+  </div>
+
+</div>
+
+<!-- Audio -->
+<audio id="audio" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Particles canvas -->
+<canvas id="particles"></canvas>
+
+<script>
+// ===== CONFIG — тек осыны өзгертіңіз =====
+const CONFIG = {
+  weddingDate: "2026-09-24T18:00:00", // ISO формат
+  googleScriptUrl: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+  autoScrollSpeed: 80, // px/sec
+  particleColor: ["#f9c6d0","#f7e0a0","#fadadd"],
+  particleCount: 1,    // интервал (мс) — кіші = көп
+};
+// ==========================================
+
+// Modal
+const modal = document.getElementById("modal");
+const page  = document.getElementById("page");
+const audio = document.getElementById("audio");
+document.getElementById("openBtn").addEventListener("click", () => {
+  modal.style.display = "none";
+  page.style.display  = "block";
+  document.body.classList.remove("modal-open");
+  audio.play().catch(()=>{});
+  startScroll();
+  startParticles();
+  observeFade();
+  startCountdown();
+});
+
+// Countdown
+function startCountdown() {
+  function tick() {
+    const diff = new Date(CONFIG.weddingDate) - new Date();
+    if (diff <= 0) { ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "00"); return; }
+    document.getElementById("days").textContent    = String(Math.floor(diff/86400000)).padStart(2,"0");
+    document.getElementById("hours").textContent   = String(Math.floor(diff%86400000/3600000)).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(Math.floor(diff%3600000/60000)).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(Math.floor(diff%60000/1000)).padStart(2,"0");
+  }
+  tick(); setInterval(tick, 1000);
+}
+
+// Auto-scroll
+let scrolling = true, scrollTimer = null;
+function startScroll() {
+  let last = 0, acc = 0;
+  function loop(ts) {
+    if (scrolling) {
+      acc += CONFIG.autoScrollSpeed * (ts - last) / 1000;
+      const step = Math.floor(acc); acc -= step;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (window.scrollY < max) window.scrollBy(0, step);
+    }
+    last = ts;
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+}
+const pause = () => { scrolling = false; clearTimeout(scrollTimer); scrollTimer = setTimeout(() => scrolling = true, 4000); };
+["touchstart","wheel","mousedown","keydown"].forEach(e => window.addEventListener(e, pause, {passive:true}));
+
+// Fade-in observer
+function observeFade() {
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("visible"); obs.unobserve(e.target); } }), {threshold:0.15});
+  document.querySelectorAll(".fade-in").forEach(el => obs.observe(el));
+}
+
+// Particles
+function startParticles() {
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+  const petals = [];
+  function Petal() {
+    this.x = Math.random() * canvas.width;
+    this.y = -20;
+    this.size = 6 + Math.random() * 8;
+    this.speed = 1 + Math.random() * 2;
+    this.drift = (Math.random() - 0.5) * 1.5;
+    this.rot = Math.random() * Math.PI * 2;
+    this.rotSpeed = (Math.random() - 0.5) * 0.05;
+    this.color = CONFIG.particleColor[Math.floor(Math.random() * CONFIG.particleColor.length)];
+  }
+  setInterval(() => petals.push(new Petal()), 300);
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    petals.forEach((p, i) => {
+      p.y += p.speed; p.x += p.drift; p.rot += p.rotSpeed;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.beginPath(); ctx.ellipse(0, 0, p.size, p.size/2, 0, 0, Math.PI*2);
+      ctx.fillStyle = p.color; ctx.fill(); ctx.restore();
+      if (p.y > canvas.height + 20) petals.splice(i, 1);
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// RSVP counter
+let cnt = 1;
+document.getElementById("dec").addEventListener("click", () => { if(cnt>1){ cnt--; document.getElementById("cnt").textContent=cnt; document.getElementById("countVal").value=cnt; } });
+document.getElementById("inc").addEventListener("click", () => { cnt++; document.getElementById("cnt").textContent=cnt; document.getElementById("countVal").value=cnt; });
+
+// RSVP submit
+document.getElementById("rsvpForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = new URLSearchParams(fd).toString();
+  e.target.reset(); cnt=1; document.getElementById("cnt").textContent=1; document.getElementById("countVal").value=1;
+  alert("Жауабыңызға рахмет! 🌸");
+  fetch(CONFIG.googleScriptUrl, { method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, mode:"no-cors", body }).catch(()=>{});
+});
+</script>
+</body>
+</html>
