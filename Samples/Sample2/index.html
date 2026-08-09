@@ -10,15 +10,15 @@
 
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Арман & Әселдің үйлену тойына шақыру!">
-    <meta property="og:description" content="24.09.2026">
+    <meta property="og:title" content="Аслан & Айнагүлдің үйлену тойына шақыру!">
+    <meta property="og:description" content="15.08.2026">
     <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNwOy4E5977wdPWxlufPMn419SM8GRybSco84X668z7OqMEG_rUHgkSx6DsAZKDYloip-Hf-ivLTNfHFnJ_YuzpM8TRJvSVZrR1bU6jLh1P1vheJO-ON2hVe2Wog_4_VCdukWlRUNCRvmGe1PHvXMo2=w786-h912-s-no-gm?authuser=0" >
 
 
 <link rel="stylesheet"  href="css.css">
 
    <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Арман & Әселдің үйлену тойына шақыру!</title> 
+<title>Аслан & Айнагүлдің үйлену тойына шақыру!</title> 
 
 
 
@@ -350,13 +350,22 @@
 .element-animation{ 
     top: 0px; 
     opacity: 0; 
-    position: relative; 
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    font-size: 0;
 } 
 .element-animation.element-show{ 
 position: relative; 
-top: 20px; 
+top: 0px; 
 opacity: 1; 
 transition-duration: 1.4s; 
+}
+.element-animation img {
+    display: block;
+    width: 100%;
 }
 
 
@@ -572,26 +581,19 @@ background-color: #F4F1EE;
 
 
 
-<center>
-<div class="fade-in" id="content">
-<img src="photo1.png" style="width: 100%; " loading="eager">
-</div></center>
+<div class="fade-in" id="content" style="margin:0;padding:0;line-height:0;">
+<img src="photo1.png" style="width:100%;display:block;" loading="eager">
+</div>
+<div class="element-animation" style="margin:0;padding:0;">
+<img src="photo2.png" style="width:100%;display:block;">
+</div>
+<div class="element-animation" style="margin:0;padding:0;">
+<img src="photo3.png" style="width:100%;display:block;">
+</div>
 
-
-
-<center>
-<div class="element-animation"> 
-<img src="photo2.png" style="width: 100%; margin-top: 50px;">
-</div></center>
-
-
-
-
-
-
-<center>
-<div class="countdown-container" style="margin-top:20px;">
-    <div class="countdown-item" style="margin-bottom: 30px;">
+<center style="padding:20px 0;">
+<div class="countdown-container">
+    <div class="countdown-item">
         <span id="days"></span>
         <span style="font-size: 13px;text-align: center;">күн</span>
     </div><h2 style="margin-top:3px; size: 30px;">:</h2>
@@ -613,30 +615,21 @@ background-color: #F4F1EE;
 
 
 
+<div class="element-animation"><a href="https://go.2gis.com/fQa4p">
+<img src="photo4.png" style="width:100%;display:block;"></a>
+</div>
+
+
+
+
+
+
+
+<div class="element-animation">
+<img src="photo5.png" style="width:100%;display:block;">
+</div>
+
 <center>
-<div class="element-animation"> <a href="https://go.2gis.com/fQa4p">
-<img src="" style="width: 100%; margin-top: 40px;"></a>
-</div></center>
-
-
-
-
-
-
-
-<center>
-<div class="element-animation"> 
-<img src="" style="width: 100%;margin-top: 50px; margin-bottom: 25px;"  >
-
-</div></center>
-
-
-
-
-
-
-
-<center style="margin-top: 0px;">
 <form class="transparent" method="post" id="form">
   <div class="form-inner">
     
@@ -691,19 +684,16 @@ background-color: #F4F1EE;
 
 
 
-<center>
-<div class="element-animation"> 
-<img src="njm.jpg" style="width: 100%;margin-top: 50px; "  >
-
-</div></center>
-
+<div class="element-animation">
+<img src="photo6.png" style="width:100%;display:block;">
+</div>
 
 
 
 <!-- Модал -->
 <div id="musicModal" class="modal">
     <div class="modal-content">
-        <img src="liul.jpg" class="kk">
+        <img src="photo.png" class="kk">
         <button id="playMusic" style="color: black;">Шақыртуды ашу</button>
     </div>
 </div>
@@ -976,7 +966,7 @@ form.addEventListener("submit", async (ev) => {
 
     document.addEventListener('DOMContentLoaded', function() {
     function updateCountdown() {
-        const endDate = new Date("October 15, 2026 18:00:00").getTime();
+        const endDate = new Date("August 15, 2026 18:00:00").getTime();
         const now = new Date().getTime();
         const distance = endDate - now;
 
