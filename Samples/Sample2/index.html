@@ -402,7 +402,7 @@ width: 100%;
       min-width: 40px;
       margin-left: 10px;
       margin-right: 10px;
-      padding-bottom: 10px;
+      padding-bottom: 0;
 }
 
     .countdown:not(:last-child)::after {
@@ -507,7 +507,7 @@ text-align: center;
 
 
 body{
-background-color: #F4F1EE;
+background-color: #f5f2ef;
 }
 </style>
 
@@ -591,7 +591,7 @@ background-color: #F4F1EE;
 <img src="photo3.png" style="width:100%;display:block;">
 </div>
 
-<center style="padding:20px 0;">
+<center>
 <div class="countdown-container">
     <div class="countdown-item">
         <span id="days"></span>
@@ -615,7 +615,7 @@ background-color: #F4F1EE;
 
 
 
-<div class="element-animation" style="margin:0;padding:0;"><a href="https://go.2gis.com/fQa4p">
+<div class="element-animation" style="margin:0;padding:0;"><a href="https://go.2gis.com/zhlzi">
 <img src="photo4.png" style="width:100%;display:block;"></a>
 </div>
 
@@ -677,12 +677,8 @@ background-color: #F4F1EE;
 
 
 
-
-
-
-
-<div class="element-animation" style="margin:0;padding:0;">
-<img src="photo6.png" style="width:100%;display:block;">
+<div class="element-animation" style="margin:0;padding:0;"><a href="https://www.instagram.com/toiga_shaqyrtugo/">
+<img src="photo6.png" style="width:100%;display:block;"></a>
 </div>
 
 
@@ -844,10 +840,7 @@ background-color: #F4F1EE;
     
 
  
-const URL_APP = "https://script.google.com/macros/s/AKfycbwnW5vDcH_2PUrc6gsiTVv44t-KF1e_a7GBgLUETdnl-vN61ox9S7GNNw6M-OBDjfJB4w/exec";
-
 const form = document.querySelector("#form");
-form.action = URL_APP;
 
 // --- Екінші сұрақ логикасы ---
 const decreaseBtn = document.querySelector("#decrease");
@@ -902,17 +895,7 @@ form.addEventListener("submit", async (ev) => {
 
   alert('Жауабыңызға рахмет!');
 
-  fetch(URL_APP, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-    },
-    mode: "no-cors",
-    body: formBody,
-  }).catch((err) => {
-    console.error('Error:', err);
-    alert("Қате орын алды!");
-  });
+
 });
 
 
