@@ -831,9 +831,7 @@ background-color: #f5f2ef;
 
 
 <script>
-    
-
- 
+document.addEventListener('DOMContentLoaded', () => {
 const form = document.querySelector("#form");
 
 // --- Екінші сұрақ логикасы ---
@@ -889,15 +887,7 @@ form.addEventListener("submit", async (ev) => {
 
   alert('Жауабыңызға рахмет!');
 
-
 });
-
-
-
-
-
-
-
 
      document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
@@ -910,11 +900,7 @@ form.addEventListener("submit", async (ev) => {
       }, { threshold: 0.15 });
       document.querySelectorAll('.element-animation').forEach(el => observer.observe(el));
     });
-
-
-
-
-
+});
 </script>
 
 
