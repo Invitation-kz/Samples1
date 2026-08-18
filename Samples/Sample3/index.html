@@ -1,182 +1,853 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="✦ Тімур мен Зарина тойына шақыру!">
-<meta property="og:description" content="7 Қаңтар 2026">
-<meta property="og:image" content="photo1.jpg">
-<title>✦ Тімур мен Зарина тойына шақыру!</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body class="modal-open">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Роза қыз ұзату тойына шақыру!</title>
 
-<!-- ========== MODAL ========== -->
-<div id="modal" class="modal">
-  <div class="modal-box">
-    <img src="cover.jpg" alt="cover" class="modal-img">
-    <button id="openBtn">✦ Шақырту хатты ашу</button>
-  </div>
+<meta property="og:title" content="Роза қыз ұзату тойына шақыру!">
+<meta property="og:description" content="17.09.2026">
+<meta property="og:image" content="https://i.postimg.cc/cLXkXSP3/j-jiuiu.jpg" style="width:40%">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap" rel="stylesheet">
+
+<style>
+  @-webkit-keyframes fall {
+    0% { opacity: 0.9; top: 0; }
+    100% { opacity: 0.2; top: 100%; }
+  }
+  @keyframes fall {
+    0% { opacity: 0.9; top: 0; }
+    100% { opacity: 0.2; top: 100%; }
+  }
+
+  @-webkit-keyframes blow-soft-left {
+    0% { margin-left: 0; }
+    100% { margin-left: -50%; }
+  }
+  @keyframes blow-soft-left {
+    0% { margin-left: 0; }
+    100% { margin-left: -50%; }
+  }
+
+  @-webkit-keyframes blow-medium-left {
+    0% { margin-left: 0; }
+    100% { margin-left: -100%; }
+  }
+  @keyframes blow-medium-left {
+    0% { margin-left: 0; }
+    100% { margin-left: -100%; }
+  }
+
+  @-webkit-keyframes blow-soft-right {
+    0% { margin-left: 0; }
+    100% { margin-left: 50%; }
+  }
+  @keyframes blow-soft-right {
+    0% { margin-left: 0; }
+    100% { margin-left: 50%; }
+  }
+
+  @-webkit-keyframes blow-medium-right {
+    0% { margin-left: 0; }
+    100% { margin-left: 100%; }
+  }
+  @keyframes blow-medium-right {
+    0% { margin-left: 0; }
+    100% { margin-left: 100%; }
+  }
+
+  @-webkit-keyframes sway-0 {
+    0% { -webkit-transform: rotate(-5deg); transform: rotate(-5deg); }
+    40% { -webkit-transform: rotate(28deg); transform: rotate(28deg); }
+    100% { -webkit-transform: rotate(3deg); transform: rotate(3deg); }
+  }
+  @keyframes sway-0 {
+    0% { -webkit-transform: rotate(-5deg); transform: rotate(-5deg); }
+    40% { -webkit-transform: rotate(28deg); transform: rotate(28deg); }
+    100% { -webkit-transform: rotate(3deg); transform: rotate(3deg); }
+  }
+
+  @-webkit-keyframes sway-1 {
+    0% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+    40% { -webkit-transform: rotate(43deg); transform: rotate(43deg); }
+    100% { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+  }
+  @keyframes sway-1 {
+    0% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+    40% { -webkit-transform: rotate(43deg); transform: rotate(43deg); }
+    100% { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+  }
+
+  @-webkit-keyframes sway-2 {
+    0% { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+    40% { -webkit-transform: rotate(56deg); transform: rotate(56deg); }
+    100% { -webkit-transform: rotate(22deg); transform: rotate(22deg); }
+  }
+  @keyframes sway-2 {
+    0% { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+    40% { -webkit-transform: rotate(56deg); transform: rotate(56deg); }
+    100% { -webkit-transform: rotate(22deg); transform: rotate(22deg); }
+  }
+
+  @-webkit-keyframes sway-3 {
+    0% { -webkit-transform: rotate(25deg); transform: rotate(25deg); }
+    40% { -webkit-transform: rotate(74deg); transform: rotate(74deg); }
+    100% { -webkit-transform: rotate(37deg); transform: rotate(37deg); }
+  }
+  @keyframes sway-3 {
+    0% { -webkit-transform: rotate(25deg); transform: rotate(25deg); }
+    40% { -webkit-transform: rotate(74deg); transform: rotate(74deg); }
+    100% { -webkit-transform: rotate(37deg); transform: rotate(37deg); }
+  }
+
+  @-webkit-keyframes sway-4 {
+    0% { -webkit-transform: rotate(40deg); transform: rotate(40deg); }
+    40% { -webkit-transform: rotate(68deg); transform: rotate(68deg); }
+    100% { -webkit-transform: rotate(25deg); transform: rotate(25deg); }
+  }
+  @keyframes sway-4 {
+    0% { -webkit-transform: rotate(40deg); transform: rotate(40deg); }
+    40% { -webkit-transform: rotate(68deg); transform: rotate(68deg); }
+    100% { -webkit-transform: rotate(25deg); transform: rotate(25deg); }
+  }
+
+  @-webkit-keyframes sway-5 {
+    0% { -webkit-transform: rotate(50deg); transform: rotate(50deg); }
+    40% { -webkit-transform: rotate(78deg); transform: rotate(78deg); }
+    100% { -webkit-transform: rotate(40deg); transform: rotate(40deg); }
+  }
+  @keyframes sway-5 {
+    0% { -webkit-transform: rotate(50deg); transform: rotate(50deg); }
+    40% { -webkit-transform: rotate(78deg); transform: rotate(78deg); }
+    100% { -webkit-transform: rotate(40deg); transform: rotate(40deg); }
+  }
+
+  @-webkit-keyframes sway-6 {
+    0% { -webkit-transform: rotate(65deg); transform: rotate(65deg); }
+    40% { -webkit-transform: rotate(92deg); transform: rotate(92deg); }
+    100% { -webkit-transform: rotate(58deg); transform: rotate(58deg); }
+  }
+  @keyframes sway-6 {
+    0% { -webkit-transform: rotate(65deg); transform: rotate(65deg); }
+    40% { -webkit-transform: rotate(92deg); transform: rotate(92deg); }
+    100% { -webkit-transform: rotate(58deg); transform: rotate(58deg); }
+  }
+
+  @-webkit-keyframes sway-7 {
+    0% { -webkit-transform: rotate(72deg); transform: rotate(72deg); }
+    40% { -webkit-transform: rotate(118deg); transform: rotate(118deg); }
+    100% { -webkit-transform: rotate(68deg); transform: rotate(68deg); }
+  }
+  @keyframes sway-7 {
+    0% { -webkit-transform: rotate(72deg); transform: rotate(72deg); }
+    40% { -webkit-transform: rotate(118deg); transform: rotate(118deg); }
+    100% { -webkit-transform: rotate(68deg); transform: rotate(68deg); }
+  }
+
+  @-webkit-keyframes sway-8 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+  @keyframes sway-8 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+
+  @-webkit-keyframes sway-9 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+  @keyframes sway-9 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+
+  @-webkit-keyframes sway-10 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+  @keyframes sway-10 {
+    0% { -webkit-transform: rotate(94deg); transform: rotate(94deg); }
+    40% { -webkit-transform: rotate(136deg); transform: rotate(136deg); }
+    100% { -webkit-transform: rotate(82deg); transform: rotate(82deg); }
+  }
+
+  .sakura {
+    pointer-events: none;
+    position: absolute;
+  }
+</style>
+
+<style>
+  @media screen and (max-width: 1280px) { div.contentblock { width: 1200px; } }
+  @media screen and (max-width: 1140px) { div.contentblock { width: 1024px; } }
+  @media screen and (max-width: 992px)  { div.contentblock { width: 970px; } }
+
+  #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  #buttonIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .element-animation {
+    top: 0px;
+    opacity: 0;
+    position: relative;
+    transition-duration: 1.4s;
+    transition-property: top, opacity;
+  }
+  .element-animation.element-show {
+    position: relative;
+    top: 20px;
+    opacity: 1;
+  }
+
+  .conteiner {
+    background-size: 100%;
+    overflow: hide;
+    width: 100%;
+    height: 50%;
+  }
+
+  .countdown-container {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.7rem;
+    font-weight: 200;
+    line-height: 1.0;
+    -webkit-text-size-adjust: 80%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    background-color: none;
+  }
+
+  .countdown-item {
+    position: relative;
+    min-width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  .countdown:not(:last-child)::after {
+    content: ':';
+    position: absolute;
+    right: -15px;
+  }
+
+  .countdown-item span {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 1px;
+    color: #3F3F3F;
+    border-radius: 5px;
+    padding: 5px;
+    animation: pulse 1s ease infinite alternate;
+  }
+
+  .invite-form {
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #4a4a48;
+    cursor: pointer;
+  }
+  .radio-option input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #6E1920;
+    flex-shrink: 0;
+  }
+
+  .stepper-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #4a4a48;
+    margin: 0 0 12px 0;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .stepper-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #6E1920;
+    background: transparent;
+    font-size: 18px;
+    line-height: 1;
+    color: #6E1920;
+    cursor: pointer;
+  }
+  .stepper-btn:active {
+    background: rgba(110, 25, 32, 0.1);
+  }
+  #countDisplay {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    min-width: 16px;
+    text-align: center;
+    color: #4a4a48;
+  }
+
+  .name-input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #cfc9c2;
+    background: #fff;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(to top left, #6E1920 0%, #6E1920 100%);
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+  .submit-btn:active {
+    transform: scale(0.98);
+  }
+
+  body {
+    background-color: #FFFFFA;
+  }
+
+  .planePath {
+    stroke: #6E1920;
+    stroke-width: .6%;
+    stroke-dasharray: 2% 4%;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  .fil1 { fill: #D9DADA; }
+  .fil2 { fill: #C5C6C6; }
+  .fil3 { fill: #AEAFB0; }
+  .fil4 { fill: #9D9E9E; }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="fade-in" id="content">
+  <img src="photo1.jpg" style="width: 100%; height: 100%;" loading="eager">
 </div>
 
-<!-- ========== CONTENT ========== -->
-<div id="page" style="display:none">
+<center>
+  <button id="musicButton" type="button" style="margin-top: 10px; border-radius: 50%; position: absolute; top: 330px; left: 5px; z-index: 10;">
+    <img id="buttonIcon" src="play.png" alt="Play Icon">
+  </button>
+  <audio id="music" src="music.mp3" preload="auto"></audio>
+</center>
 
-  <div class="fade-in">
-    <img src="photo1.jpg" class="full-img" alt="">
+<center>
+  <div class="element-animation">
+    <img src="photo2.jpg" style="width: 100%; margin-top: 10px;">
   </div>
+</center>
 
-  <div class="fade-in center names-block">
-    <p class="pre-title">ТОЙҒА ШАҚЫРАМЫЗ</p>
-    <h1 class="names">Тімур <span>&</span> Зарина</h1>
-    <p class="date-text">7 Қаңтар 2026</p>
-  </div>
+<svg viewBox="0 0 3387 1270" style="margin-top: 40px;">
+  <path id="planePath" class="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179" />
+  <g id="plane">
+    <polygon class="fil1" points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 " />
+    <polygon class="fil2" points="199,0 -141,-10 -163,63 -123,9 " />
+    <polygon class="fil3" points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 " />
+    <path class="fil4" d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z" />
+    <polygon class="fil1" points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 " />
+  </g>
+  <animateMotion xlink:href="#plane" dur="5s" repeatCount="indefinite" rotate="auto">
+    <mpath xlink:href="#planePath" />
+  </animateMotion>
+</svg>
 
-  <div class="fade-in center">
-    <div class="countdown">
-      <div class="cd-item"><span id="days">00</span><small>күн</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span id="hours">00</span><small>сағат</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span id="minutes">00</span><small>минут</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span id="seconds">00</span><small>секунд</small></div>
-    </div>
-  </div>
-
-  <div class="fade-in">
-    <a href="https://maps.google.com/?q=Астана,+Нұрлы+жол+1">
-      <img src="photo2.jpg" class="full-img" alt="">
+<center>
+  <div class="element-animation">
+    <a href="https://2gis.kz/shymkent/geo/70000001029047126" target="_blank" style="display: inline-block; text-decoration: none;">
+      <img src="photo3.jpg" style="width: 100%; margin-top: 30px; border: none;">
     </a>
   </div>
+</center>
 
-  <div class="fade-in">
-    <img src="photo3.jpg" class="full-img" alt="">
+<center>
+  <div class="element-animation">
+    <img src="photo4.jpg" style="width: 100%; margin-top: 30px;">
   </div>
+</center>
 
-  <div class="fade-in center form-section">
-    <form id="rsvpForm">
-      <div class="radio-group">
-        <p>Келесіз бе?</p>
-        <label><input type="radio" name="attend" value="Иә барамын" required> Иә барамын</label>
-        <label><input type="radio" name="attend" value="Серіктесіммен барамын"> Серіктесіммен барамын</label>
-        <label><input type="radio" name="attend" value="Бара алмаймын"> Бара алмаймын</label>
+<center>
+  <div class="element-animation">
+    <img src="photo5.jpg" style="width: 100%; margin-top: 70px; margin-bottom: 20px;">
+  </div>
+</center>
+
+<center>
+  <div class="countdown-container" style="margin-top: 10px;">
+    <div class="countdown-item" style="margin-bottom: 30px;">
+      <span id="days"></span>
+      <span style="font-size: 13px; text-align: center;">күн</span>
+    </div>
+    <h2 style="margin-top: 3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+      <span id="hours"></span>
+      <span style="font-size: 13px; text-align: center;">сағат</span>
+    </div>
+    <h2 style="margin-top: 3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+      <span id="minutes"></span>
+      <span style="font-size: 13px; text-align: center;">минут</span>
+    </div>
+    <h2 style="margin-top: 3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+      <span id="seconds"></span>
+      <span style="font-size: 13px; text-align: center;">секунд</span>
+    </div>
+  </div>
+</center>
+
+<center>
+  <div class="element-animation">
+    <img src="photo6.jpg" style="width: 100%; margin-top: 30px; margin-bottom: 25px;">
+  </div>
+</center>
+
+<center style="margin-top: 20px;">
+  <form method="post" id="form">
+    <div class="invite-form">
+
+      <div class="radio-group" required>
+        <label class="radio-option">
+          <input type="radio" name="name" value="Иә барамын" required>
+          <span>Иә барамын</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="name" value="Жұбайыммен барамын" required>
+          <span>Жұбайыммен барамын</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="name" value="Бара алмаймын" required>
+          <span>Бара алмаймын</span>
+        </label>
       </div>
-      <div class="counter-group">
-        <p>Неше адам?</p>
-        <div class="counter">
-          <button type="button" id="dec">−</button>
-          <span id="cnt">1</span>
-          <button type="button" id="inc">+</button>
-        </div>
-        <input type="hidden" id="countVal" name="count" value="1">
+
+      <p class="stepper-label">Неше адам болып келесіздер?</p>
+      <div class="stepper">
+        <button type="button" class="stepper-btn" id="countMinus">−</button>
+        <span id="countDisplay">1</span>
+        <button type="button" class="stepper-btn" id="countPlus">+</button>
       </div>
-      <input type="text" name="name" placeholder="Есіміңізді жазыңыз" required>
-      <button type="submit">Жіберу ✦</button>
-    </form>
-  </div>
+      <input type="hidden" name="count" id="count" value="1">
 
-  <div class="fade-in">
-    <img src="photo4.jpg" class="full-img" alt="">
-  </div>
+      <input
+        type="text"
+        required
+        name="message"
+        maxlength="100"
+        id="message"
+        class="name-input"
+        placeholder="Есіміңізді жазыңыз"
+      >
 
-</div>
+      <button type="submit" class="submit-btn">Жіберу</button>
+    </div>
+  </form>
+</center>
 
-<audio id="audio" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-<canvas id="particles"></canvas>
+<center>
+  <a href="https://www.instagram.com/toiga_shaqyrtugo/" target="_blank" style="display: inline-block; text-decoration: none;">
+    <img src="photo7.jpg" style="width: 100%; margin-top: 50px; border: none;">
+  </a>
+</center>
 
 <script>
-const CONFIG = {
-  eventDate: "2026-01-07T19:00:00",
-  googleScriptUrl: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
-  autoScrollSpeed: 80,
-  particleColor: ["rgba(255,255,255,0.8)","rgba(192,192,192,0.6)","rgba(200,180,255,0.5)"],
-};
+document.addEventListener('DOMContentLoaded', function () {
 
-const modal = document.getElementById("modal");
-const page  = document.getElementById("page");
-const audio = document.getElementById("audio");
-document.getElementById("openBtn").addEventListener("click", () => {
-  modal.style.display = "none";
-  page.style.display  = "block";
-  document.body.classList.remove("modal-open");
-  audio.play().catch(()=>{});
-  startScroll(); startParticles(); observeFade(); startCountdown();
-});
-
-function startCountdown() {
-  function tick() {
-    const diff = new Date(CONFIG.eventDate) - new Date();
-    if (diff <= 0) { ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "00"); return; }
-    document.getElementById("days").textContent    = String(Math.floor(diff/86400000)).padStart(2,"0");
-    document.getElementById("hours").textContent   = String(Math.floor(diff%86400000/3600000)).padStart(2,"0");
-    document.getElementById("minutes").textContent = String(Math.floor(diff%3600000/60000)).padStart(2,"0");
-    document.getElementById("seconds").textContent = String(Math.floor(diff%60000/1000)).padStart(2,"0");
-  }
-  tick(); setInterval(tick, 1000);
-}
-
-let scrolling = true, scrollTimer = null;
-function startScroll() {
-  let last = 0, acc = 0;
-  function loop(ts) {
-    if (scrolling) {
-      acc += CONFIG.autoScrollSpeed * (ts - last) / 1000;
-      const step = Math.floor(acc); acc -= step;
-      if (window.scrollY < document.documentElement.scrollHeight - window.innerHeight) window.scrollBy(0, step);
-    }
-    last = ts; requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-}
-const pause = () => { scrolling = false; clearTimeout(scrollTimer); scrollTimer = setTimeout(() => scrolling = true, 4000); };
-["touchstart","wheel","mousedown","keydown"].forEach(e => window.addEventListener(e, pause, {passive:true}));
-
-function observeFade() {
-  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("visible"); obs.unobserve(e.target); } }), {threshold:0.15});
-  document.querySelectorAll(".fade-in").forEach(el => obs.observe(el));
-}
-
-// Stars / sparkles
-function startParticles() {
-  const canvas = document.getElementById("particles");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-  window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-  const stars = [];
-  function Star() {
-    this.x = Math.random() * canvas.width; this.y = -10;
-    this.size = 1 + Math.random() * 3; this.speed = 0.5 + Math.random() * 1;
-    this.drift = (Math.random() - 0.5) * 0.8; this.alpha = 0.4 + Math.random() * 0.6;
-    this.color = CONFIG.particleColor[Math.floor(Math.random() * CONFIG.particleColor.length)];
-  }
-  setInterval(() => stars.push(new Star()), 200);
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach((s, i) => {
-      s.y += s.speed; s.x += s.drift;
-      ctx.beginPath(); ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
-      ctx.fillStyle = s.color; ctx.globalAlpha = s.alpha; ctx.fill(); ctx.globalAlpha = 1;
-      if (s.y > canvas.height + 10) stars.splice(i, 1);
+  /* ---------- Плавное появление первой фотографии ---------- */
+  var mainObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        mainObserver.unobserve(entry.target);
+      }
     });
-    requestAnimationFrame(draw);
+  });
+  document.querySelectorAll('.fade-in').forEach(function (el) {
+    mainObserver.observe(el);
+  });
+
+  /* ---------- Фотографии появляются по очереди при прокрутке ---------- */
+  var sequenceElements = document.querySelectorAll('.element-animation');
+  sequenceElements.forEach(function (el, index) {
+    el.style.transitionDelay = (index * 0.15) + 's';
+  });
+
+  var sequenceObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('element-show');
+        sequenceObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: [0.5] });
+  sequenceElements.forEach(function (el) {
+    sequenceObserver.observe(el);
+  });
+
+  /* ---------- Музыка ---------- */
+  var musicButton = document.getElementById('musicButton');
+  var music = document.getElementById('music');
+  var buttonIcon = document.getElementById('buttonIcon');
+  var isPlaying = false;
+
+  if (musicButton && music && buttonIcon) {
+    musicButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isPlaying) {
+        music.pause();
+        buttonIcon.src = 'play.png';
+        isPlaying = false;
+      } else {
+        var playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise.then(function () {
+            buttonIcon.src = 'stop.png';
+            isPlaying = true;
+          }).catch(function (err) {
+            console.error('Музыканы ойнату мүмкін болмады:', err);
+            alert('Музыка ойнатылмады: ' + err.message);
+          });
+        } else {
+          buttonIcon.src = 'stop.png';
+          isPlaying = true;
+        }
+      }
+    });
+
+    music.addEventListener('ended', function () {
+      buttonIcon.src = 'play.png';
+      isPlaying = false;
+    });
+  } else {
+    console.error('Музыка батырмасы табылмады: musicButton, music немесе buttonIcon элементі жоқ.');
   }
-  draw();
-}
 
-let cnt = 1;
-document.getElementById("dec").addEventListener("click", () => { if(cnt>1){ cnt--; document.getElementById("cnt").textContent=cnt; document.getElementById("countVal").value=cnt; } });
-document.getElementById("inc").addEventListener("click", () => { cnt++; document.getElementById("cnt").textContent=cnt; document.getElementById("countVal").value=cnt; });
+  /* ---------- Обратный отсчёт ---------- */
+  var timerInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
 
-document.getElementById("rsvpForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  const body = new URLSearchParams(new FormData(e.target)).toString();
-  e.target.reset(); cnt=1; document.getElementById("cnt").textContent=1; document.getElementById("countVal").value=1;
-  alert("Жауабыңызға рахмет! ✦");
-  fetch(CONFIG.googleScriptUrl, { method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, mode:"no-cors", body }).catch(()=>{});
+  function updateCountdown() {
+    var endDate = new Date('September 17, 2026 19:00:00').getTime();
+    var now = new Date().getTime();
+    var distance = endDate - now;
+
+    if (distance < 0) {
+      clearInterval(timerInterval);
+      document.getElementById('days').innerText = '00';
+      document.getElementById('hours').innerText = '00';
+      document.getElementById('minutes').innerText = '00';
+      document.getElementById('seconds').innerText = '00';
+      return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+  }
+
+  /* ---------- Степпер (неше адам болып келеді) ---------- */
+  var countDisplay = document.getElementById('countDisplay');
+  var countHidden = document.getElementById('count');
+  var minCount = 1;
+  var maxCount = 20;
+
+  function setCount(val) {
+    val = Math.max(minCount, Math.min(maxCount, val));
+    countHidden.value = val;
+    countDisplay.textContent = val;
+  }
+
+  document.getElementById('countMinus').addEventListener('click', function () {
+    setCount(parseInt(countHidden.value, 10) - 1);
+  });
+  document.getElementById('countPlus').addEventListener('click', function () {
+    setCount(parseInt(countHidden.value, 10) + 1);
+  });
+
+  /* ---------- Форма ---------- */
+  var URL_APP = 'https://script.google.com/macros/s/AKfycbzHs7y-I4G1_VRxveObrhR1YAcJCIk1uFo1dlSylaNssnazHxKKtbfpCHaRQzje8frG/exec';
+  var form = document.querySelector('#form');
+  form.action = URL_APP;
+
+  function isFilled(details) {
+    return Boolean(details.attend && details.message);
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+
+    var attend = document.querySelector('[name=name]:checked');
+    var message = document.querySelector('[name=message]');
+    var countField = document.querySelector('[name=count]');
+
+    var details = {
+      attend: attend ? attend.value : '',
+      message: message.value.trim(),
+      count: countField ? countField.value.trim() : ''
+    };
+
+    if (!isFilled(details)) {
+      alert('Барлық жолдарды толтырыңыз!');
+      return;
+    }
+
+    // doPost() бағаналарды осы ретпен жазады: A = name, B = choice, C = message
+    // Кестеде: A = Иә/Жоқ, B = Саны, C = Есімі
+    var payload = {
+      name: details.attend,
+      choice: details.count,
+      message: details.message
+    };
+
+    message.value = '';
+    if (attend) attend.checked = false;
+    setCount(1);
+    alert('Жауабыңызға рахмет!');
+
+    fetch(URL_APP, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      mode: 'no-cors',
+      body: JSON.stringify(payload)
+    }).catch(function (err) {
+      console.error('Error:', err);
+      alert('Ошибка!');
+    });
+  });
+
 });
 </script>
+
+<script async>
+"use strict";
+
+var Sakura = function Sakura(selector, options) {
+  var _this = this;
+
+  if (typeof selector === 'undefined') {
+    throw new Error('No selector present. Define an element.');
+  }
+
+  this.el = document.querySelector(selector);
+
+  var defaults = {
+    className: 'sakura',
+    fallSpeed: 1,
+    maxSize: 14,
+    minSize: 10,
+    delay: 300,
+    colors: [{
+      gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+      gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+      gradientColorDegree: 120
+    }]
+  };
+
+  var extend = function extend(originalObj, newObj) {
+    Object.keys(originalObj).forEach(function (key) {
+      if (newObj && Object.prototype.hasOwnProperty.call(newObj, key)) {
+        originalObj[key] = newObj[key];
+      }
+    });
+    return originalObj;
+  };
+
+  this.settings = extend(defaults, options);
+  this.el.style.overflowX = 'hidden';
+
+  function randomArrayElem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  var prefixes = ['webkit', 'moz', 'MS', 'o', ''];
+
+  function PrefixedEvent(element, type, callback) {
+    for (var p = 0; p < prefixes.length; p += 1) {
+      var animType = type;
+      if (!prefixes[p]) {
+        animType = type.toLowerCase();
+      }
+      element.addEventListener(prefixes[p] + animType, callback, false);
+    }
+  }
+
+  function elementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+  }
+
+  this.createPetal = function () {
+    if (_this.el.dataset.sakuraAnimId) {
+      setTimeout(function () {
+        window.requestAnimationFrame(_this.createPetal);
+      }, _this.settings.delay);
+    }
+
+    var animationNames = {
+      blowAnimations: ['blow-soft-left', 'blow-medium-left', 'blow-soft-right', 'blow-medium-right'],
+      swayAnimations: ['sway-0', 'sway-1', 'sway-2', 'sway-3', 'sway-4', 'sway-5', 'sway-6', 'sway-7', 'sway-8']
+    };
+
+    var blowAnimation = randomArrayElem(animationNames.blowAnimations);
+    var swayAnimation = randomArrayElem(animationNames.swayAnimations);
+    var fallTime = (document.documentElement.clientHeight * 0.007 + Math.round(Math.random() * 5)) * _this.settings.fallSpeed;
+
+    var animationsArr = [
+      "fall ".concat(fallTime, "s linear 0s 1"),
+      "".concat(blowAnimation, " ").concat((fallTime > 30 ? fallTime : 30) - 20 + randomInt(0, 20), "s linear 0s infinite"),
+      "".concat(swayAnimation, " ").concat(randomInt(2, 4), "s linear 0s infinite")
+    ];
+    var animations = animationsArr.join(', ');
+
+    var petal = document.createElement('div');
+    petal.classList.add(_this.settings.className);
+    var height = randomInt(_this.settings.minSize, _this.settings.maxSize);
+    var width = height - Math.floor(randomInt(0, _this.settings.minSize) / 3);
+
+    var color = randomArrayElem(_this.settings.colors);
+    petal.style.background = "linear-gradient(".concat(color.gradientColorDegree, "deg, ").concat(color.gradientColorStart, ", ").concat(color.gradientColorEnd, ")");
+    petal.style.webkitAnimation = animations;
+    petal.style.animation = animations;
+    petal.style.borderRadius = "".concat(randomInt(_this.settings.maxSize, _this.settings.maxSize + Math.floor(Math.random() * 10)), "px ").concat(randomInt(1, Math.floor(width / 4)), "px");
+    petal.style.height = "".concat(height, "px");
+    petal.style.left = "".concat(Math.random() * document.documentElement.clientWidth - 100, "px");
+    petal.style.marginTop = "".concat(-(Math.floor(Math.random() * 20) + 15), "px");
+    petal.style.width = "".concat(width, "px");
+
+    PrefixedEvent(petal, 'AnimationEnd', function () {
+      if (!elementInViewport(petal)) {
+        petal.remove();
+      }
+    });
+    PrefixedEvent(petal, 'AnimationIteration', function () {
+      if (!elementInViewport(petal)) {
+        petal.remove();
+      }
+    });
+
+    _this.el.appendChild(petal);
+  };
+
+  this.el.setAttribute('data-sakura-anim-id', window.requestAnimationFrame(this.createPetal));
+};
+
+Sakura.prototype.start = function () {
+  var animId = this.el.dataset.sakuraAnimId;
+  if (!animId) {
+    this.el.setAttribute('data-sakura-anim-id', window.requestAnimationFrame(this.createPetal));
+  } else {
+    throw new Error('Sakura is already running.');
+  }
+};
+
+Sakura.prototype.stop = function () {
+  var _this2 = this;
+  var graceful = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var animId = this.el.dataset.sakuraAnimId;
+
+  if (animId) {
+    window.cancelAnimationFrame(animId);
+    this.el.setAttribute('data-sakura-anim-id', '');
+  }
+
+  if (!graceful) {
+    setTimeout(function () {
+      var petals = document.getElementsByClassName(_this2.settings.className);
+      while (petals.length > 0) {
+        petals[0].parentNode.removeChild(petals[0]);
+      }
+    }, this.settings.delay + 50);
+  }
+};
+
+var sakura = new Sakura('body', {
+  colors: [
+    { gradientColorStart: 'rgba(255, 255, 255, 0.9)', gradientColorEnd: 'rgba(255, 255, 255, 0.9)', gradientColorDegree: 120 },
+    { gradientColorStart: 'rgba(44, 0, 0, 0.7)', gradientColorEnd: 'rgba(44, 0, 0, 0.7)', gradientColorDegree: 120 },
+    { gradientColorStart: 'rgba(44, 0, 0, 0.7)', gradientColorEnd: 'rgba(44, 0, 0, 0.7)', gradientColorDegree: 120 }
+  ],
+  delay: 50
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" async></script>
 </body>
 </html>
